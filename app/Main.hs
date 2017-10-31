@@ -1,6 +1,6 @@
 module Main where
 
-import Lib
+import BNFToParser
 
 main :: IO ()
-main = someFunc
+main = return ()

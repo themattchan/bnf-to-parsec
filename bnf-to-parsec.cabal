@@ -17,7 +17,7 @@ library
   hs-source-dirs:      src
   exposed-modules:     BNFToParser
   build-depends:       base >= 4.7 && < 5
-                     , megaparsec
+                     , megaparsec >= 6
                      , bytestring
                      , haskell-src-exts
                      , directory

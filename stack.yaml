@@ -37,6 +37,8 @@ resolver: lts-9.11
 # will not be run. This is useful for tweaking upstream packages.
 packages:
 - '.'
+- location: https://hackage.haskell.org/package/megaparsec-6.2.0/megaparsec-6.2.0.tar.gz
+
 # Dependency packages to be pulled from upstream that are not in the resolver
 # (e.g., acme-missiles-0.3)
 extra-deps: []
