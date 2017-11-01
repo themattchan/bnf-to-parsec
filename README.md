@@ -12,19 +12,21 @@ Grammar:
   (many1 <production>))
 
 (define <production>
-  (<ident> (literal ':') <alts>))
+  (sequence <ident> (literal ':') <alts>))
 
 (define <tokens>
   (many <token>))
 
 (define <alts>
-  <tokens> (many (literal '|') <tokens>))
+  (sequence <tokens> (many (literal '|') <tokens>)))
 
 (define <token>
-  (anyof '(<term> <ident>
-           (sequence (literal '[') <tokens> (literal ']'))
-           (sequence (literal '(') <alts> (literal ')') (optional (or (literal '*') (literal '+'))))
-          )))
+  (sequence
+    (anyof '(<term>
+             <ident>
+             (sequence (literal '[') <tokens> (literal ']'))
+             (sequence (literal '(') <alts> (literal ')') )))
+    (optional (or (literal '*') (literal '+')))))
 
 (define <ident>
   snake_case_ident)
